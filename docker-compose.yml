@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: sample_vue
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    stdin_open: true
+    tty: true
