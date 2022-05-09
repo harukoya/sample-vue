@@ -1,3 +1,9 @@
 <template>
-  <h1>トータルのいいね</h1>
+  <div>
+    <slot></slot>
+  </div>
 </template>
+
+<script>
+
+</script>
