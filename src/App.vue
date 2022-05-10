@@ -4,6 +4,8 @@
       <template v-slot:title>
         <h2>こんにちは</h2>
       </template>
+      <h3>はじめまして</h3>
+      <p>よろしくおねがいします</p>
       <template v-slot:number>
         <p>{{ number }}</p>
       </template>
