@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="title">でふぉると</slot>
+    <slot name="title" v-bind:user="user" text="text">でふぉると</slot>
     <slot></slot>
     <hr>
     <p>いいねの数</p>
@@ -9,5 +9,15 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      user: {
+        firstName: 'Hoge',
+        lastName: 'Fuga'
+      }
+    }
+  }
+}
 
 </script>
