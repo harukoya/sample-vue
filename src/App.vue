@@ -10,6 +10,21 @@
     <keep-alive>
       <component v-bind:is="currentComponent"></component>
     </keep-alive>
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="title">タイトル</label>
+      <input type="text"
+             id="title"
+             v-model.lazy="eventData.title"
+      >
+      <p>{{ eventData.title }}</p>
+      <label for="maxNumber">最大人数</label>
+      <input type="number"
+             id="maxNumber"
+             v-model.number="eventData.maxNumber"
+      >
+      <p>{{ typeof eventData.maxNumber }}</p>
+    </div>
   </div>
 </template>
 
@@ -22,7 +37,11 @@ export default {
   data() {
     return {
       number: 10,
-      currentComponent: 'Home'
+      currentComponent: 'Home',
+      eventData: {
+        title: "タイトル",
+        maxNumber: 0
+      }
     }
   },
   components: {
