@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <button v-on:click="show = !show">切り替え</button>
-    <p v-if="show">Hello</p>
+    <transition name="fade">
+      <p v-if="show">Hello</p>
+    </transition>
   </div>
   
 </template>
@@ -16,7 +18,26 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
 .main {
   width: 70%;
   margin: auto;
