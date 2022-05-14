@@ -5,7 +5,7 @@
       <p>みなさん</p>
       <h3>はじめまして</h3>
       <p>よろしくおねがいします</p>
-      <template v-slot:[title]></template>
+      <template #[title]></template>
     </LikeHeader>
     <LikeNumber :total-number="number" v-on:my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
