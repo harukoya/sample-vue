@@ -1,9 +1,19 @@
 <template>
-  <p v-border:solid.round.shadow="{width: '5px', color: 'red'}">Home</p>
+  <div>
+    <p v-border:solid.round.shadow="{width: '5px', color: 'red'}">Home</p>
+    <h2>{{ title | upperCase }}</h2>
+    <p>{{ subTitle | upperCase }}</p>
+  </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      title: 'welcome to tokyo',
+      subTitle: 'hello'
+    }
+  },
   directives: {
     border(el, binding) {
       el.style.borderWidth = binding.value.width;
