@@ -7,7 +7,9 @@
     <button v-on:click="currentComponent = 'Home'">Home</button>
     <button v-on:click="currentComponent = 'About'">About</button>
 
-    <component v-bind:is="currentComponent"></component>
+    <keep-alive>
+      <component v-bind:is="currentComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
