@@ -34,6 +34,13 @@
       <label for="detail">イベントの内容</label>
       <textarea name="" id="detail" cols="30" rows="10" v-model="eventData.detail"></textarea>
       <p style="white-space: pre;">{{ eventData.detail }}</p>
+
+      <input type="checkbox"
+             id="isPrivate"
+             v-model="eventData.isPrivate"
+      >
+      <label for="isPrivate">非公開</label>
+      <p>{{ eventData.isPrivate }}</p>
     </div>
   </div>
 </template>
@@ -53,6 +60,7 @@ export default {
         maxNumber: 0,
         host: '',
         detail: '',
+        isPrivate: false,
       }
     }
   },
