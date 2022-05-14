@@ -1,10 +1,11 @@
 <template>
   <div>
-    <LikeHeader v-slot="slotProps">
+    <LikeHeader>
       <p>{{ slotProps }}</p>
       <p>みなさん</p>
       <h3>はじめまして</h3>
       <p>よろしくおねがいします</p>
+      <template v-slot:[title]></template>
     </LikeHeader>
     <LikeNumber :total-number="number" v-on:my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
@@ -17,7 +18,8 @@ import LikeHeader from './components/LikeHeader.vue'
 export default {
   data() {
     return {
-      number: 10
+      number: 10,
+      title: "title"
     }
   },
   components: {
