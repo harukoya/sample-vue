@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="title" v-bind:user="user" text="text">でふぉると</slot>
+    <slot v-bind:user="user" text="text">でふぉると</slot>
     <slot></slot>
     <hr>
     <p>いいねの数</p>
