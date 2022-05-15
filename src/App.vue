@@ -4,6 +4,12 @@
     <button @click="myAnimation = 'fade'">Fade</button>
     <p>現在設定されているアニメーション：{{ myAnimation }}</p>
     <button v-on:click="show = !show">切り替え</button>
+    <br>
+    <button @click="myComponent = 'ComponentA'">コンポーネントAを表示</button>
+    <button @click="myComponent = 'ComponentB'">コンポーネントBを表示</button>
+    <transition name='fade' mode='out-in'>
+      <component :is="myComponent"></component>
+    </transition>
     <transition name="fade" mode="out-in">
       <p v-if="show" key='bye'>さようなら</p>
       <p v-else key='hello'>こんにちは</p>
@@ -24,11 +30,19 @@
 </template>
 
 <script>
+import ComponentA from './components/ComponentA.vue'
+import ComponentB from './components/ComponentB.vue'
+
 export default {
+  components: {
+    ComponentA,
+    ComponentB
+  },
   data() {
     return {
       show: true,
-      myAnimation: ''
+      myAnimation: '',
+      myComponent: 'ComponentA'
     }
   }
 }
