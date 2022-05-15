@@ -1,14 +1,19 @@
 <template>
   <div class="main">
+    <button v-on:click="myAnimation = 'slide'">Slide</button>
+    <button @click="myAnimation = 'fade'">Fade</button>
+    <p>現在設定されているアニメーション：{{ myAnimation }}</p>
     <button v-on:click="show = !show">切り替え</button>
     <transition
       enter-active-class="animate__animated animate__bounce"
       leave-active-class="animate__animated animate__rubberBand"
     >
-      <p v-if="show">Hello</p>
+      <p v-if="show">Hello (animation by animated.css)</p>
     </transition>
-    <transition name="slide">
-      <p v-if="show">bye</p>
+    <transition
+      v-bind:name="myAnimation"
+    >
+      <p v-if="show">bye (animation by css)</p>
     </transition>
   </div>
   
@@ -18,7 +23,8 @@
 export default {
   data() {
     return {
-      show: true
+      show: true,
+      myAnimation: ''
     }
   }
 }
