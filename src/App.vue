@@ -1,7 +1,10 @@
 <template>
   <div class="main">
     <button v-on:click="show = !show">切り替え</button>
-    <transition name="fade">
+    <transition
+      enter-active-class="animate__animated animate__bounce"
+      leave-active-class="animate__animated animate__rubberBand"
+    >
       <p v-if="show">Hello</p>
     </transition>
     <transition name="slide">
