@@ -115,6 +115,10 @@ export default {
   border-radius: 100px;
   background-color: deeppink;
 }
+
+.fade-move {
+  transition: transform 1s;
+}
 .fade-enter {
   opacity: 0;
 }
@@ -129,6 +133,8 @@ export default {
 }
 .fade-leave-active {
   transition: opacity 0.5s;
+  position: absolute;
+  width: 200px;
 }
 .fade-leave-to {
   opacity: 0;
